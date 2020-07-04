@@ -635,7 +635,6 @@
         if (objs.videoImages[sequence]) {
           objs.context.drawImage(objs.videoImages[sequence], 0, 0);
         }
-        console.log("loop");
       } else if (currentScene === 2) {
         const currentYOffset = delayedYOffset - prevScrollHeight;
         const values = sceneInfo[currentScene].values;

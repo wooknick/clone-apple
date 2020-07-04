@@ -238,6 +238,10 @@ a:visited {
     opacity: 1;
 }
 
+.before-load .container {
+    display: none;
+}
+
 @keyframes loading-spin {
     100% {
         transform: rotate(360deg);
