@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 html {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 14px;
@@ -57,8 +56,7 @@ a:visited {
     backdrop-filter: saturate(180%) blur(15px);
 }
 
-.global-nav-links,
-.local-nav-links {
+.global-nav-links, .local-nav-links {
     display: flex;
     align-items: center;
     max-width: 1000px;
@@ -196,10 +194,7 @@ a:visited {
     width: 100%;
 }
 
-#show-scene-0 #scroll-section-0 .sticky-elem,
-#show-scene-1 #scroll-section-1 .sticky-elem,
-#show-scene-2 #scroll-section-2 .sticky-elem,
-#show-scene-3 #scroll-section-3 .sticky-elem {
+#show-scene-0 #scroll-section-0 .sticky-elem, #show-scene-1 #scroll-section-1 .sticky-elem, #show-scene-2 #scroll-section-2 .sticky-elem, #show-scene-3 #scroll-section-3 .sticky-elem {
     display: block;
 }
 
@@ -224,50 +219,91 @@ a:visited {
     align-items: center;
 }
 
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.before-load .loading {
+    opacity: 1;
+}
+
+@keyframes loading-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-circle {
+    width: 54px;
+    height: 54px;
+    animation: loading-spin 3s infinite;
+}
+
+@keyframes loading-circle-ani {
+    0% {
+        stroke-dashoffset: 157;
+    }
+    75% {
+        stroke-dashoffset: -147;
+    }
+    100% {
+        stroke-dashoffset: -157;
+    }
+}
+
+.loading-circle circle {
+    stroke: black;
+    stroke-width: 4;
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    fill: transparent;
+    animation: loading-circle-ani 1s infinite
+}
 
 @media (min-width: 1024px) {
     #scroll-section-0 h1 {
         font-size: 9vw;
     }
-
     .main-message {
         font-size: 4vw;
     }
-
     .description {
         font-size: 2rem;
     }
-
     .description strong {
         font-size: 6rem;
     }
-
     #scroll-section-2 .main-message {
         font-size: 6vw;
     }
-
     .main-message small {
         font-size: 1.5vw;
     }
-
     .desc-message {
         width: 20%;
     }
-
     #scroll-section-2 .b {
         top: 20%;
         left: 53%;
     }
-
     #scroll-section-2 .c {
         left: 55%;
     }
-
     .mid-message {
         width: 1000px;
         font-size: 4vw;
     }
-
     .canvas-caption {
         font-size: 2rem;
     }
